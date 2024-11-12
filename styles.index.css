@@ -2,84 +2,52 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body, html {
-    height: 100%;
-}
-
-body {
     font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100%; 
-    border: 3px solid black;
-}
-
-header, nav, section, article, aside, footer {
-    border: 3px solid black; 
-    padding: 10px;
-}
-
-header, nav, footer {
-    width: 100%;
-}
-
-header {
-    background-color: #4d6fda;
-    text-align: center;
-    height: 10%; 
-}
-
-nav {
-    background-color: #54bcc7;
-    height: 7%; 
-}
-
-footer {
-    background-color: #4d6fda;
-    text-align: center;
-    height: 10%; 
-    border: 3px solid black;
-}
-
-.content {
-    display: flex;
-    flex-grow: 1;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    width: 75%; 
-}
-
-section, article {
-    width: 100%;
-    flex-grow: 1; 
-}
-
-section {
-    background-color: #fad030;
-    display: flex;
-    align-items: center;
-}
-
-article {
-    background-color: #eb7a5c;
-    display: flex;
-    align-items: center;
-}
-
-aside {
-    background-color: #ffffff;
     color: black;
-    width: 25%; 
-    height: calc(130% - 17% - 10%); 
-    border: 3px solid black;
-    display: flex;
-    align-items: center;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "section aside"
+    "article aside"
+    "footer footer";
+    height: 100vh;
+    gap: 5px;
+    padding: 5px;
+    background-color: black;
+}
+
+.header {
+    grid-area: header;
+    background-color: #4d6fda;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #54bcc7;
+}
+
+.section {
+    grid-area: section;
+    background-color: #fad030;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: white;
+}
+.article {
+    grid-area: article;
+    background-color: #eb7a5c;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #4d6fda;
 }
